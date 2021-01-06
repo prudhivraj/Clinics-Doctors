@@ -1,0 +1,33 @@
+<section>
+    <h3 style="text-align: center;">Clinics</h3>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Clinic Name</th>
+                <th scope="col">Contact</th>
+                <th scope="col">Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let clinic of clinics; let i=index " (click)="checkDoctors(clinic)" style="cursor: pointer;">
+                <th scope="row">{{ i+1 }}</th>
+                <td>{{ clinic.name }}</td>
+                <td>{{  clinic.contact }}</td>
+                <td>{{  clinic.email }}</td>
+            </tr>
+            <!-- <tr (click)="checkDoctors(2)">
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr (click)="checkDoctors(2)">
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+            </tr> -->
+        </tbody>
+    </table>
+</section>

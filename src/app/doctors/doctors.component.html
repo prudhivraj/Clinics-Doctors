@@ -1,0 +1,26 @@
+
+<section>
+    <h3 style="text-align: center;">{{clinic[0].name}} && Doctors &&  Apppointments</h3>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Doctor Name</th>
+                <th scope="col">Speciality</th>
+                <th scope="col">Time Duration</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let doc of doctor;let i=index">
+                <th scope="row">{{ i+1}}</th>
+                <td>{{doc.name}}</td>
+                <td>{{ doc.speciality }}</td>
+                <td>{{ doc.duration }}</td>
+                <td><button [disabled]='!doc.isDocAvailable' (click)="BookAppointment(doc)"
+                        class="btn btn-primary" > {{ doc.isDocAvailable ? 'Book slot':'Booked'  }}</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-primary" routerLink='/'>Back</button>
+</section>
